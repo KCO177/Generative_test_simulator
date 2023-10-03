@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test results</title>
+    <link th:href="@{main.css}" rel="stylesheet"/>
+</head>
+<body>
+<h3>Tests results</h3>
+<table>
+    <tr>
+        <th>Test Id</th>
+        <th>Date Time</th>
+        <th>Passed</th>
+        <th>Result Match</th>
+        <th>Result Category</th>
+    </tr>
+    <tr th:each="item : ${testResult}" >
+        <td th:text="${item.id}"/>
+        <td th:text="${item.datetime}"/>
+        <td th:text="${item.passed}"/>
+        <td th:text="${item.percResultMatch}"/>
+        <td th:text="${item.percResultCategory}"/>
+    </tr>
+</table>
+
+</body>
+</html>
